@@ -12,7 +12,7 @@ workflows:
       - name: Create APK
         script: |
           cd sec
-          buildozer android debug
+          buildozer android debug -v 2>&1 | tail -50
       - name: Find APK files
         script: |
           echo "=== Looking for APK files ==="
