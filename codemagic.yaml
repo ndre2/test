@@ -7,11 +7,11 @@ workflows:
     scripts:
       - name: Setup build environment
         script: |
-          pip install --upgrade pip
+          pip install --upgrade pip setuptools wheel
           pip install buildozer cython==0.29.30 kivy>=2.3.0
       - name: Create APK
         script: |
           cd sec
-          buildozer android debug
+          buildozer android debug 2>&1 | head -100
     artifacts:
       - sec/bin/helper-1.0-debug.apk
