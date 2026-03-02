@@ -13,6 +13,11 @@ workflows:
         script: |
           cd sec
           buildozer android debug
-          find . -name "*.apk" -type f
+      - name: Find APK files
+        script: |
+          echo "=== Looking for APK files ==="
+          find . -name "*.apk" -type f -o -name "*.buildozer" -type d
+          echo "=== Listing sec/bin directory ==="
+          ls -la sec/bin/ || echo "No bin directory found"
     artifacts:
       - sec/bin/**/*.apk
