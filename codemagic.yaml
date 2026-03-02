@@ -1,8 +1,6 @@
 workflows:
   android-build:
     name: Build Android APK
-    environment:
-      python: 3.11
     triggering:
       events:
         - push
