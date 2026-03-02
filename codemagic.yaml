@@ -12,6 +12,7 @@ workflows:
       - name: Create APK
         script: |
           cd sec
-          buildozer android debug 2>&1 | head -100
+          buildozer android debug
+          find . -name "*.apk" -type f
     artifacts:
-      - sec/bin/helper-1.0-debug.apk
+      - sec/bin/**/*.apk
