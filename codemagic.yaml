@@ -1,17 +1,13 @@
 workflows:
   android-build:
     name: Build Android APK
-    environment:
-      android_sdk: 31
-      ndk: 25b
     triggering:
       events:
         - push
     scripts:
       - name: Install dependencies
         script: |
-          pip install buildozer cython
-          pip install -r sec/requirements.txt
+          pip install buildozer cython kivy
       - name: Build APK
         script: |
           cd sec
