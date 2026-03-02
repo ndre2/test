@@ -1,16 +1,19 @@
 workflows:
   android-build:
     name: Build Android APK
+    environment:
+      python: 3.11
     triggering:
       events:
         - push
     scripts:
-      - name: Install dependencies
+      - name: Setup build environment
         script: |
-          pip install buildozer cython kivy
-      - name: Build APK
+          pip install --upgrade pip
+          pip install buildozer cython==0.29.30 kivy>=2.3.0
+      - name: Create APK
         script: |
           cd sec
           buildozer android debug
     artifacts:
-      - sec/bin/*.apk
+      - sec/bin/helper-1.0-debug.apk

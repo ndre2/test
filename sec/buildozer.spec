@@ -19,7 +19,10 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 1.0
 
 # Requirements
-requirements = python3,kivy,android
+requirements = python3,kivy>=2.3.0
+
+# Permissions
+permissions = INTERNET,RECORD_AUDIO,ACCESS_FINE_LOCATION
 
 # Orientation
 orientation = portrait
@@ -28,11 +31,15 @@ orientation = portrait
 fullscreen = 1
 
 # Android-specific
-android.permissions = INTERNET,RECORD_AUDIO
+android.permissions = INTERNET,RECORD_AUDIO,ACCESS_FINE_LOCATION
 android.api = 31
 android.minapi = 21
 android.ndk = 25b
 android.accept_sdk_license = True
+android.gradle_dependencies = 
+android.add_src = 
+android.logcat_filters = *:S python:D
+android.entrypoint = org.kivy.android.PythonActivity
 
 # Build configuration
 [buildozer]

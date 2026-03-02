@@ -4,8 +4,6 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.label import Label
 from kivy.uix.button import Button
-from kivy.uix.image import Image
-from kivy.garden.matplotlib.backend_kivyagg import FigureCanvasKivyAgg
 from kivy.graphics import Color, RoundedRectangle, Line
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
