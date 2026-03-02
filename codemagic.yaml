@@ -2,7 +2,7 @@ workflows:
   android-build:
     name: Build Android APK
     environment:
-      java: java11
+      java: java17
       ndk: 25b
     triggering:
       events:
