@@ -1,0 +1,20 @@
+workflows:
+  android-build:
+    name: Build Android APK
+    environment:
+      java: java11
+      ndk: 25b
+    triggering:
+      events:
+        - push
+    scripts:
+      - name: Install dependencies
+        script: |
+          pip install buildozer cython
+          pip install -r sec/requirements.txt
+      - name: Build APK
+        script: |
+          cd sec
+          buildozer android debug
+    artifacts:
+      - sec/bin/*.apk
